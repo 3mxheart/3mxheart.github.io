@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>关于 · MMMxheart</title>
+    <meta name="description" content="关于 MMMxheart。" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">M</span>
+        <span class="brand-text">MMMxheart</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">文章</a>
+        <a href="/about.html" aria-current="page">关于</a>
+        <a href="https://github.com/3mxheart" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <article class="post">
+        <header class="post-header">
+          <h1>关于</h1>
+        </header>
+
+        <p>
+          你好，我是 <strong>MMMxheart</strong>。这个站点放在 GitHub Pages 上，
+          用来放我平时写的东西：踩过的坑、折腾过的工具，以及一些没头没尾的笔记。
+        </p>
+
+        <!-- TODO: 换成你自己的介绍，比如在学什么、在做什么项目、喜欢什么 -->
+        <p>
+          目前主要在前端方向折腾，也会看一些逆向分析和嵌入式相关的东西。
+        </p>
+
+        <h2>这个站点</h2>
+        <ul>
+          <li>纯静态页面，没有任何构建步骤，改完直接 push 就会自动更新；</li>
+          <li>字体跟随系统，白天黑夜样式跟随系统设置；</li>
+          <li>没有统计脚本、没有追踪，只关心内容本身。</li>
+        </ul>
+
+        <h2>联系</h2>
+        <ul>
+          <li>GitHub：<a href="https://github.com/3mxheart" target="_blank" rel="noreferrer">@3mxheart</a></li>
+          <!-- TODO: 想公开邮箱或博客链接的话，在这里补一行 -->
+        </ul>
+
+        <p class="back"><a href="/">← 回到首页</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year">2026</span> MMMxheart · 由 GitHub Pages 托管</p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

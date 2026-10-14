@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MMMxheart · 咕咕咕</title>
+    <meta name="description" content="MMMxheart 的博客：前端、逆向分析和日常折腾。" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">M</span>
+        <span class="brand-text">MMMxheart</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">文章</a>
+        <a href="/about.html">关于</a>
+        <a href="https://github.com/3mxheart" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <p class="eyebrow">Blog</p>
+        <h1>咕咕咕</h1>
+        <p class="lead">
+          这里是 MMMxheart 的博客。主要记录前端、逆向分析和课程项目里踩过的坑，
+          想到什么写什么，更新随缘。
+        </p>
+        <div class="links">
+          <a class="btn" href="https://github.com/3mxheart" target="_blank" rel="noreferrer">GitHub 主页</a>
+          <a class="btn btn-ghost" href="https://github.com/3mxheart/rea-cn" target="_blank" rel="noreferrer">rea-cn 仓库</a>
+        </div>
+      </section>
+
+      <section class="posts">
+        <h2>文章</h2>
+        <!-- 新增文章：复制一个 <li>，改掉日期、标题、链接和摘要即可 -->
+        <ul class="post-list">
+          <li>
+            <a href="/posts/hello.html">
+              <time datetime="2026-10-14">2026-10-14</time>
+              <h3>开张：为什么要折腾一个自己的博客</h3>
+              <p>把散落在备忘录、聊天记录和截图里的经验，搬到一个能长期留下来的地方。</p>
+            </a>
+          </li>
+          <li>
+            <a href="/posts/rea-cn.html">
+              <time datetime="2026-10-14">2026-10-14</time>
+              <h3>把 REA 的中文官网在本地跑起来，并 fork 了一份</h3>
+              <p>从一个 zip 包开始：装依赖、构建、起本地预览，最后把仓库接到自己的账号上。</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year">2026</span> MMMxheart · 由 GitHub Pages 托管</p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>把 REA 的中文官网在本地跑起来，并 fork 了一份 · MMMxheart</title>
+    <meta name="description" content="从一个 zip 包开始：装依赖、构建、本地预览，最后接到自己的 GitHub 账号。" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">M</span>
+        <span class="brand-text">MMMxheart</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">文章</a>
+        <a href="/about.html">关于</a>
+        <a href="https://github.com/3mxheart" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <article class="post">
+        <header class="post-header">
+          <p class="eyebrow">踩坑记录</p>
+          <h1>把 REA 的中文官网在本地跑起来，并 fork 了一份</h1>
+          <time datetime="2026-10-14">2026-10-14</time>
+        </header>
+
+        <p>
+          REA 是一个"逆向一切"的 MCP 服务：把智能体接到 Hopper、Ghidra、IDA、JADX 这些分析工具上，
+          在本机逆向二进制、Electron 应用、.NET 程序集、网站等等。我在
+          <a href="https://github.com/3mxheart/rea-cn" target="_blank" rel="noreferrer">rea-cn</a>
+          这个仓库里保存它的中文官网源码。
+        </p>
+
+        <h2>仓库里有什么</h2>
+
+        <p>
+          它不是 REA 本体，只是一套静态官网：Astro 负责生成页面，React 处理几个交互组件，
+          样式用 Tailwind。站点一共三个页面——首页、使用指南、案例，文案都是中文，
+          但"打开指南""看案例"那些链接仍然跳回英文站。
+        </p>
+
+        <h2>把它跑起来</h2>
+
+        <p>
+          仓库里的依赖没有随代码一起打包，所以第一步是装依赖。这台机器上没有正经安装的 Node，
+          只有 HBuilderX 自带的一份，于是用它带上 npm 来装：
+        </p>
+
+        <pre><code>$n   = "...\HBuilderX\plugins\node\node.exe"
+$npm = "...\HBuilderX\plugins\node18\npm\node_modules\npm\bin\npm-cli.js"
+
+&amp; $n $npm install
+&amp; $n $npm run build     # 产出 dist/，三个页面
+&amp; $n $npm run dev        # 开发服务器，附带热更新</code></pre>
+
+        <p>
+          装依赖花了五分钟，构建只用了一秒不到。构建产物是静态 HTML，随便找个能起静态服务的工具
+          指到 <code>dist</code> 目录就能看效果。
+        </p>
+
+        <h2>接上自己的账号</h2>
+
+        <p>
+          下载下来的 zip 解压之后是没有 <code>.git</code> 的，也就是说它暂时没法提交、也没法推送。
+          于是补上：初始化仓库、把 <code>origin</code> 指向自己的 fork、拉取远端分支，
+          再把本地的工作目录对接到 <code>origin/main</code>。这样一来，本地既能保留已经装好的
+          <code>node_modules</code>，又能正常提交和推送。
+        </p>
+
+        <h2>值得记下来的两点</h2>
+
+        <ul>
+          <li>
+            <code>git init</code> 之后执行 <code>git reset origin/main</code>（默认 mixed），
+            可以把索引和分支指向远端，同时不动工作区文件——比起重新 clone 一份再装一次依赖，省事得多。
+          </li>
+          <li>
+            仓库原本用 <code>bun.lock</code>，我这边用 npm 装完会多出一个
+            <code>package-lock.json</code>。两个锁文件并存没什么害处，但最好别同时提交。
+          </li>
+        </ul>
+
+        <p class="back"><a href="/">← 回到首页</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year">2026</span> MMMxheart · 由 GitHub Pages 托管</p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

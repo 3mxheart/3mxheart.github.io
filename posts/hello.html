@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>开张：为什么要折腾一个自己的博客 · MMMxheart</title>
+    <meta name="description" content="把散落在各处的经验搬到一个能长期留下来的地方。" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">M</span>
+        <span class="brand-text">MMMxheart</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">文章</a>
+        <a href="/about.html">关于</a>
+        <a href="https://github.com/3mxheart" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <article class="post">
+        <header class="post-header">
+          <p class="eyebrow">第一篇</p>
+          <h1>开张：为什么要折腾一个自己的博客</h1>
+          <time datetime="2026-10-14">2026-10-14</time>
+        </header>
+
+        <p>
+          我遇到的问题，几乎都曾经遇到过第二次。第一次是搜半天才凑出答案，第二次是"我明明搞过这个"，
+          然后又把同样的半天重新花一遍。
+        </p>
+
+        <p>
+          写下来的意义就在这儿：把一次性的搜索，变成以后能直接翻出来的东西。
+          顺便也能逼自己把话说清楚——一个东西如果讲不明白，通常说明还没真的弄懂。
+        </p>
+
+        <h2>为什么不用现成的平台</h2>
+
+        <p>
+          写作平台当然更省事，但我不太喜欢的是：内容存在别人的服务器上，样式不可控，
+          哪天平台调整规则，链接就废了。相比之下，一个仓库、一堆 HTML，放在哪都能打开，
+          十年后大概也还能看。
+        </p>
+
+        <p>
+          代价是要自己写页面。不过这件事本身也挺好玩，而且站点越简单越不容易坏——
+          这个博客就没有任何构建步骤，改完 push，几十秒后线上就更新了。
+        </p>
+
+        <h2>打算写什么</h2>
+
+        <ul>
+          <li>折腾工具和项目的完整过程，包括中间走的弯路；</li>
+          <li>前端相关的东西，尤其是那些文档里一句话带过、实际很容易踩的细节；</li>
+          <li>逆向分析、课程项目里值得记下来的片段。</li>
+        </ul>
+
+        <p class="back"><a href="/">← 回到首页</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year">2026</span> MMMxheart · 由 GitHub Pages 托管</p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

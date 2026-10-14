@@ -34,13 +34,15 @@ git push
 
 ## 本地预览
 
-直接双击 `index.html` 也能看个大概。想要和线上一致（根路径 `/assets/...` 能正常加载），
-在项目目录里起一个静态服务器即可：
+页面里的样式和图片都写在根路径上（`/assets/...`），所以直接双击 `index.html` 会变成没有样式的裸页面。
+想看和线上一致的效果，在项目目录里起一个静态服务器，然后浏览器打开 http://localhost:8000 ：
 
 ```bash
 python -m http.server 8000
-# 然后打开 http://localhost:8000
 ```
+
+本机已经装了 Python，所以不用再额外安装什么。习惯用 VS Code 的话，装个 Live Server 插件，
+右键 `index.html` → Open with Live Server 也是一样的效果。
 
 ## 绑定自定义域名
 
